@@ -9,7 +9,7 @@ kotlin = "2.1.21"
 kotlinx-coroutines = "1.10.2"
 kotlinx-collections-immutable = "0.3.8"
 lifecycle = "2.9.0"
-compose-hot-reload = "1.0.0-alpha10"
+compose-hot-reload = "1.0.0-beta03"
 material-icons-core = "1.7.3"
 
 [libraries]
