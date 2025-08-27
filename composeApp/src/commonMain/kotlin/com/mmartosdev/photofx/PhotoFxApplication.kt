@@ -11,6 +11,7 @@ import com.mmartosdev.photofx.ui.EffectConfig
 import com.mmartosdev.photofx.ui.photofx.PhotoFx
 import kotlinx.collections.immutable.persistentListOf
 import org.jetbrains.compose.resources.imageResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import photo_fx.composeapp.generated.resources.Res
 import photo_fx.composeapp.generated.resources.img_01
 import photo_fx.composeapp.generated.resources.img_02
@@ -19,9 +20,10 @@ import photo_fx.composeapp.generated.resources.img_04
 import photo_fx.composeapp.generated.resources.img_05
 import photo_fx.composeapp.generated.resources.img_06
 
+@Preview
 @Composable
 internal fun PhotoFxApplication(
-    onCloseClicked: (() -> Unit)?,
+    onCloseClicked: (() -> Unit)? = null,
 ) = AppTheme {
     val images = persistentListOf(
         imageResource(Res.drawable.img_01),
