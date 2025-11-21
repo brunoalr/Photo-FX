@@ -28,10 +28,6 @@ kotlin {
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
         instrumentedTestVariant {
             sourceSetTree.set(KotlinSourceSetTree.test)
-            dependencies {
-                debugImplementation(libs.androidx.testManifest)
-                implementation(libs.androidx.junit4)
-            }
         }
     }
 
@@ -105,11 +101,11 @@ kotlin {
 
 android {
     namespace = "com.mmartosdev.photofx"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
 
         applicationId = "com.mmartosdev.photofx.androidApp"
         versionCode = 1
@@ -127,7 +123,7 @@ android {
         managedDevices.allDevices {
             maybeCreate<ManagedVirtualDevice>("pixel5").apply {
                 device = "Pixel 5"
-                apiLevel = 34
+                apiLevel = 35
                 systemImageSource = "aosp"
             }
         }
@@ -139,6 +135,11 @@ android {
     buildFeatures {
         //enables a Compose tooling support in the AndroidStudio
         compose = true
+    }
+
+    dependencies {
+        debugImplementation(libs.androidx.testManifest)
+        androidTestImplementation(libs.androidx.junit4)
     }
 }
 
